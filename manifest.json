@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "Focus Tube: AI Intent Feed",
+    "version": "1.0.0",
+    "description": "Replaces YouTube feed with an AI-curated focus mode.",
+    "permissions": ["storage"],
+    "host_permissions": [
+      "https://www.youtube.com/*",
+      "https://www.googleapis.com/*",
+      "https://generativelanguage.googleapis.com/*"
+    ],
+    "icons": {
+      "16": "logo.png",
+      "48": "logo.png",
+      "128": "logo.png"
+    },
+    "action": {
+      "default_icon": "logo.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.youtube.com/*"],
+        "js": ["content.js"],
+        "css": ["styles.css"],
+        "run_at": "document_start"
+      }
+    ]
+  }
